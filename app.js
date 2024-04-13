@@ -1,4 +1,6 @@
-var oneLinerJoke = require('one-liner-joke');
+//https://twitchtokengenerator.com/
+
+const oneLinerJoke = require('one-liner-joke');
 const { translate } = require('bing-translate-api');
 const fn = require('./util/fn.js');
 require('dotenv').config();
