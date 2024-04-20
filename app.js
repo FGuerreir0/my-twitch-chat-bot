@@ -40,10 +40,16 @@ function firstModMesg(modInfo, channel) {
   }
 }
 
+client.on('connected', async () => {
+  setInterval(()=>{
+    client.say('#fguerreir0', `Olá malta, obrigado por estarem a assistir aproveitem e façam follow e !comandos para mais informações! HSCheers`)
+  }, 30 * 60 * 1000)
+})
+
 
 client.on('message', async (channel, tags, message, self) => {
   let currentdate = fn.getcurrentdate(); 
-
+  console.log(channel)
   if  (defaultdate != currentdate && tags.mod && !todayModArray.find(element => element === tags.username)) {
       firstModMesg(tags, channel)
   }
@@ -75,7 +81,10 @@ client.on('message', async (channel, tags, message, self) => {
       client.say(channel, `Instagram: https://www.instagram.com/fguerreir0 | LinkedIn: https://www.linkedin.com/in/fabiofsguerreiro | GitHub: https://github.com/FGuerreir0`);
       break;
     case 'comandos':
-      client.say(channel, `!ola, !specs, !social, !website, !piada`);
+      client.say(channel, `!ola, !specs, !social, !website, !piada, !rank`);
+      break;
+    case 'rank':
+      client.say(channel, `O @${tags.username} é rank Veterano 3 no Pokemon Unite! NotLikeThis`);
       break;
     case 'piada':
       let joke = fn.getJoke(oneLinerJoke, translate);

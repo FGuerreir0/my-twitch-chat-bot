@@ -4,15 +4,10 @@ function  getcurrentdate(){
   return datetime;
 
 }
-/*
-function getRandomItem() {
-  let jokes = ['dad', 'Chuck Norris'];
-  return jokes[Math.floor(Math.random() * jokes.length)];
-}*/
 
 function getJoke(oneLinerJoke){
   try{
-    let getRandomJoke = oneLinerJoke.getRandomJoke({'exclude_tags': ['dirty', 'racist', 'insults', 'sex', 'sexual', 'women', 'men', 'flirty']});
+    let getRandomJoke = oneLinerJoke.getRandomJoke({'exclude_tags': ['dirty', 'racist', 'insults', 'sex', 'sexual', 'women', 'men', 'flirty', 'rude', 'christian']});
     console.log(getRandomJoke.tags);
     let joke = getRandomJoke.body
     return joke;
