@@ -13,6 +13,7 @@
     "bing-translate-api": "^4.0.1",
     "dotenv": "^16.4.5",
     "one-liner-joke": "^1.2.2",
+    "say": "^0.16.0",
     "tmi.js": "^1.8.5"
   }
 }
