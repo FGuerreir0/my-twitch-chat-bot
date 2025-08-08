@@ -56,9 +56,9 @@ client.on('message', async (channel, tags, message, self) => {
   const commands = {
     'ola': (channel, tags) => client.say(channel, `Olá @${tags.username}! Bem-vindo, junta-te a nós e bebe um copo! HSCheers`),
     'specs': (channel) => client.say(channel, `Processador: AMD Ryzen 7 3700x | Memória Ram: 64GB | Placa Gráfica: NVIDIA GeForce RTX 3060 | MotherBoard: B450 Aorus Elite V2 | Fonte: Azza PSAZ-650W`),
-    'website': (channel) => client.say(channel, `https://fabioguerreiro.pt`),
+    'website': (channel) => client.say(channel, `https://fabioguerreirodev.netlify.app/`),
     'social': (channel) => client.say(channel, `Instagram: https://www.instagram.com/fguerreir0 | LinkedIn: https://www.linkedin.com/in/fabiofsguerreiro | GitHub: https://github.com/FGuerreir0`),
-    'comandos': (channel) => client.say(channel, `!ola, !horario, !specs, !social, !website, !piada, !toppoints`),
+    'comandos': (channel) => client.say(channel, `!ola, !horario, !specs, !social, !website`),
     'horario': (channel) => client.say(channel, `📅 Horario: ${horario.join('  |  ')}`),
     'say': async (channel, tags, message) => {
       if(tags.mod || tags.badges.broadcaster == '1') {
