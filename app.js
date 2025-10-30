@@ -18,14 +18,6 @@ const horario = ["Segunda, Quarta e Sexta: 21H", "Fim-de-semana: 15H"]
 var sendEngagingMessage = true
 let lotteryNumber = Math.floor(Math.random() * 1000) + 1;
 
-
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-app.get('/', (req, res) => res.send('Twitch bot running!'));
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
 const client = new tmi.Client({
   connection: {
     secure: true,
@@ -133,3 +125,17 @@ client.on('message', async (channel, tags, message, self) => {
     commands[command](channel, tags, message);
   }
 });
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => res.send('Twitch bot running!'));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+setInterval(() => {
+  const fetch = require('node-fetch');
+  const url = `https://${process.env.RENDER_EXTERNAL_URL}`;
+  
+  fetch(url)
+    .then(res => console.log(`Keep-alive ping successful: ${res.status}`))
+    .catch(err => console.error('Keep-alive ping failed:', err));
+}, 5 * 60 * 1000); // every 5 minutes
