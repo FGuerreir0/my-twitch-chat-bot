@@ -133,7 +133,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 setInterval(() => {
   const fetch = require('node-fetch');
-  const url = `https://${process.env.RENDER_EXTERNAL_URL}`;
+  const url = `${process.env.RENDER_EXTERNAL_URL}`;
   
   fetch(url)
     .then(res => console.log(`Keep-alive ping successful: ${res.status}`))
