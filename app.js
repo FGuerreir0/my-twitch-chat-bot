@@ -4,7 +4,7 @@ const oneLinerJoke = require('one-liner-joke');
 const fn = require('./util/fn.js');
 const say = require('say');
 const tmi = require('tmi.js');
-
+const express = require('express');
 require('dotenv').config();
 
 let defaultdate = 20240101;
@@ -19,7 +19,7 @@ var sendEngagingMessage = true
 let lotteryNumber = Math.floor(Math.random() * 1000) + 1;
 
 
-const express = require('express');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.get('/', (req, res) => res.send('Twitch bot running!'));
