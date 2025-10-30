@@ -42,6 +42,12 @@ function firstModMesg(modInfo, channel) {
 }
 
 client.on('connected', async () => {
+
+    setInterval(() => {
+      client.say(channel, `Apoiem o canal: https://buymeacoffee.com/fabioguerreiro! HSCheers`);
+  }, 25*60*1000);
+
+  
   setInterval(()=>{
     if(sendEngagingMessage){
       client.say('#fguerreir0', `Olá malta, obrigado por estarem a assistir aproveitem e façam follow e !comandos para mais informações! HSCheers`)
@@ -109,6 +115,7 @@ client.on('message', async (channel, tags, message, self) => {
   if(tags['first-msg']) {
     client.say(channel, `Chat paguem uma cerveja ao @${tags.username}! Primeira mensagem na stream! Bem-vindo HSCheers HSCheers`);
   }
+
 
 	if(self || !message.startsWith('!')) return;
 	const args = message.slice(1).split(' ');
